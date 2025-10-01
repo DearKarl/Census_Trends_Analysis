@@ -59,4 +59,6 @@ All data © Crown copyright and database right. Licensed for re-use under the Op
 - MacQueen, J. (1967). *Some methods for classification and analysis of multivariate observations.* Proc. 5th Berkeley Symp.  
 - Pedregosa, F. et al. (2011). *Scikit-learn: Machine Learning in Python.* JMLR.  
 
+---
+
 > Repository maintained by the project team. Contributions and feedback welcome.  
