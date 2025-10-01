@@ -61,4 +61,4 @@ All data © Crown copyright and database right. Licensed for re-use under the Op
 
 ---
 
-> Repository maintained by the project team. Contributions and feedback welcome.  
+> Repository maintained by [DearKarl](https://github.com/DearKarl). Contributions and feedback welcome. 
