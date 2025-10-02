@@ -1,5 +1,7 @@
 # Census Latent Patterns Analysis in England & Wales
 
+A streamlined workflow that employs machine learning techniques to harmonise census geographies, infer latent socio-demographic constructs, and analyse regional dynamics across England and Wales.  
+
 ## Project Overview  
 
 This project develops a reproducible analytics pipeline to explore socio-demographic structures in England and Wales using 2011 and 2021 Census data. It integrates multi-table census inputs (accommodation type, tenure, occupancy, car availability), harmonises geographies across years, constructs Bayesian latent indices with credible intervals, and applies machine learning techniques (PCA, t-SNE, UMAP, K-Means) to identify interpretable population patterns. Outputs are exported in Tableau-ready CSVs for comparative socio-economic visualisation.
