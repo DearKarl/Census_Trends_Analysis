@@ -1,44 +1,32 @@
-# Census Latent Patterns in England & Wales
-### Bayesian latent modelling, dimensionality reduction, and clustering on ONS Census data
+# Census Latent Patterns Analysis in England & Wales
 
-This repository implements an analytics for exploring 2011 & 2021 Census data from England and Wales. The workflow integrates multi-table census data (accommodation type, tenure, occupancy, and car availability), harmonises 2021 local authority geographies to the 2011 framework, constructs Bayesian latent indices with credible intervals, applies dimensionality reduction and clustering (PCA–t-SNE, UMAP, K-Means), and exports Tableau-ready CSVs for comparative visualisation.  
+## Project Overview  
+
+This project develops a reproducible analytics pipeline to explore socio-demographic structures in England and Wales using 2011 and 2021 Census data. It integrates multi-table census inputs (accommodation type, tenure, occupancy, car availability), harmonises geographies across years, constructs Bayesian latent indices with credible intervals, and applies machine learning techniques (PCA, t-SNE, UMAP, K-Means) to identify interpretable population patterns. Outputs are exported in Tableau-ready CSVs for comparative socio-economic visualisation.
 
 ## Background  
 
-Cross-year socio-demographic comparison in the UK is challenged by two issues: (1) administrative geography changes between 2011 and 2021, and (2) high-dimensionality of census tabulations. Raw tables obscure interpretable social structures, while geography mismatches prevent valid temporal comparisons.  
+Socio-demographic comparison across Census years in England and Wales presents two major challenges:  
+(1) **geographical inconsistency** caused by boundary changes between 2011 and 2021, and  
+(2) **high-dimensionality** of census tabulations that obscures interpretable social patterns.  
 
-This project resolves these barriers by:  
-- aligning 2021 geography codes to 2011 units via TF-IDF name similarity, token rules, and manual splits;  
-- deriving latent constructs** such as deprivation, housing strain, tenure instability, and mobility access with **Bayesian Confirmatory Factor Analysis (CFA);  
-- applying non-linear embeddings (UMAP, t-SNE) and clustering to reveal structural groupings;  
-- producing uncertainty-aware, Tableau-ready outputs for visual analytics of temporal change.  
+This study aims to resolve these challenges through machine learning techniques. By harmonising geographies with text-matching algorithms, applying Bayesian latent variable models to derive socio-demographic constructs such as deprivation, housing strain, tenure instability, and mobility access, and embedding these indices into low-dimensional spaces using non-linear dimensionality reduction methods (t-SNE, UMAP), the pipeline enables interpretable discovery of underlying patterns. Clustering with K-Means then identifies structural groupings across local authorities, while uncertainty quantification through Bayesian inference ensures that cross-year comparisons remain statistically robust. The outcome is a reproducible machine learning workflow that transforms raw census tables into uncertainty-aware, interpretable, and visualisable socio-economic insights.   
 
-## Project Goal
+## Key Features  
 
-The aim of this project is to develop a reproducible pipeline that harmonises the 2011 and 2021 Census geographies to enable consistent cross-year analysis, constructs latent socio-demographic indices through Bayesian inference, applies dimensionality reduction and clustering techniques to project indicators and indices into low-dimensional spaces for the identification of regional patterns, and produces exportable datasets that facilitate the clear visual comparison of socio-economic trends across the two census years.
+- **Geographical Harmonisation**: Resolve boundary inconsistencies between the 2011 and 2021 Census through automated text-matching algorithms, including TF-IDF similarity, token-based alignment, and explicit split–merge rules.  
+- **Bayesian Latent Modelling**: Employ Bayesian Confirmatory Factor Analysis (CFA) with variational inference to construct latent socio-demographic indices. The Bayesian model integrates multiple observed indicators into theoretically informed constructs such as deprivation, housing strain, tenure instability, and mobility access.  
+- **Uncertainty Quantification**: Use Bayesian inference to estimate posterior distributions, reporting posterior means with 95% credible intervals for each latent index.
+- **Dimensionality Reduction and Clustering**: Apply representation learning methods (PCA, t-SNE, UMAP) to reduce the high-dimensional census space into low-dimensional manifolds. Unsupervised clustering with K-Means is used to detect emergent regional typologies and socio-economic groupings.  
+- **Visual Analytics and Interpretability**: Export of harmonised, modelled, and clustered outputs in Tableau-compatible formats, supporting visualisation of spatial patterns and temporal dynamics in socio-economic change.  
 
-## Methods Overview  
+## Dependencies  
 
-- **Data Harmonisation**:  
-  - Load and audit Census 2011 (QS402EW, QS405EW, QS412EW, QS416EW) and 2021 (TS044, TS054) datasets.  
-  - Align 2021 codes to 2011 geography using TF-IDF cosine similarity, token-level matching, and explicit split/merge rules.  
-  - Standardise all variable names to **snake_case** for clean processing.  
+- **Bayesian Modelling**: PyMC, ArviZ  
+- **Machine Learning**: scikit-learn, umap-learn  
+- **Data Processing**: pandas, numpy, scipy  
+- **Visualisation**: matplotlib, seaborn, Tableau  
 
-- **Bayesian Latent Modelling**:  
-  - Group observed indicators into predefined constructs (deprivation, housing strain, tenure instability, mobility access).  
-  - Fit Bayesian CFA models with PyMC, using ADVI for variational inference.  
-  - Export posterior means and 95% credible intervals for each index.  
-  - Extend CFA to accommodation and tenure features for 2011 vs 2021 latent comparisons.  
-
-- **Dimensionality Reduction & Clustering**:  
-  - Apply PCA→t-SNE for observed 2011 indicators.  
-  - Use UMAP for latent indices and 2011–2021 feature sets.  
-  - Cluster embeddings with **K-Means (k=5)** independently per year.  
-  - Profile clusters via within-cluster proportions, scaled to “relative scores” for interpretability.  
-
-- **Outputs**:  
-  - Long-format latent data, wide-format year pivots, embedding coordinates with cluster labels, and normalised cluster profiles.  
-  - Files are written to `Dashboard*/` directories for Tableau dashboards.  
 
 ## Data Sources  
 
