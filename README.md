@@ -16,18 +16,18 @@ This study aims to resolve these challenges through machine learning techniques.
 
 ## Key Features  
 
-- **Geographical Harmonisation**: Resolve boundary inconsistencies between the 2011 and 2021 Census through automated text-matching algorithms, including TF-IDF similarity, token-based alignment, and explicit split–merge rules.  
-- **Bayesian Latent Modelling**: Employ Bayesian Confirmatory Factor Analysis (CFA) with variational inference to construct latent socio-demographic indices. The Bayesian model integrates multiple observed indicators into theoretically informed constructs such as deprivation, housing strain, tenure instability, and mobility access.  
-- **Uncertainty Quantification**: Use Bayesian inference to estimate posterior distributions, reporting posterior means with 95% credible intervals for each latent index.
-- **Dimensionality Reduction and Clustering**: Apply representation learning methods (PCA, t-SNE, UMAP) to reduce the high-dimensional census space into low-dimensional manifolds. Unsupervised clustering with K-Means is used to detect emergent regional typologies and socio-economic groupings.  
-- **Visual Analytics and Interpretability**: Export of harmonised, modelled, and clustered outputs in Tableau-compatible formats, supporting visualisation of spatial patterns and temporal dynamics in socio-economic change.  
+- **Geographical Harmonisation:** Resolve boundary inconsistencies between the 2011 and 2021 Census through automated text-matching algorithms, including TF-IDF similarity, token-based alignment, and explicit split–merge rules.  
+- **Bayesian Latent Modelling:** Employ Bayesian Confirmatory Factor Analysis (CFA) with variational inference to construct latent socio-demographic indices. The Bayesian model integrates multiple observed indicators into theoretically informed constructs such as deprivation, housing strain, tenure instability, and mobility access.  
+- **Uncertainty Quantification:** Use Bayesian inference to estimate posterior distributions, reporting posterior means with 95% credible intervals for each latent index.
+- **Dimensionality Reduction and Clustering:** Apply representation learning methods (PCA, t-SNE, UMAP) to reduce the high-dimensional census space into low-dimensional manifolds. Unsupervised clustering with K-Means is used to detect emergent regional typologies and socio-economic groupings.  
+- **Visual Analytics and Interpretability:** Export of harmonised, modelled, and clustered outputs in Tableau-compatible formats, supporting visualisation of spatial patterns and temporal dynamics in socio-economic change.  
 
 ## Dependencies  
 
-- **Bayesian Modelling**: PyMC, ArviZ  
-- **Machine Learning**: scikit-learn, umap-learn  
-- **Data Processing**: pandas, numpy, scipy  
-- **Visualisation**: matplotlib, seaborn, Tableau  
+- **Bayesian Modelling:** PyMC, ArviZ  
+- **Machine Learning:** scikit-learn, umap-learn  
+- **Data Processing:** pandas, numpy, scipy  
+- **Visualisation:** matplotlib, seaborn, Tableau  
 
 
 ## Data Sources  
